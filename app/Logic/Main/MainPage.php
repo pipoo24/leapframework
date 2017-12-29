@@ -6,10 +6,32 @@
  * Time: 9:36 AM
  */
 
-class MainPage extends WebApps{
+class MainPage extends MainWebApps{
 
     function index(){
 
-        echo "hello world";
+        echo "hello world hahaha";
+
+        ?>
+        <a href="<?=_SPPATH;?>daftar_buku">daftar_buku</a>
+        <?
     }
+
+    function daftar_buku(){
+
+        echo "buku1, buku2";
+//        $buku = new Buku();
+//        $arr = $buku->getAll();
+//        pr($arr);
+    }
+
+    function backend(){
+
+
+        $acc = new AccountLogin();
+        $acc->loginForm();
+
+    }
+
+
 } 

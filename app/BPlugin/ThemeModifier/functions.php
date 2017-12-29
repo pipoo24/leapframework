@@ -1,7 +1,7 @@
 <?php
-//Registor::registerAdminMenu("Appearance", "ThemeSelector", "ThemeModWeb/select");
+Registor::registerAdminMenu("Appearance", "ThemeSelector", "ThemeModWeb/select");
 //set yang bisa lihat menu
-//Registor::setDomainAndRoleMenu("ThemeSelector");
+Registor::setDomainAndRoleMenu("ThemeSelector");
 
 /*Registor::registerAdminMenu("Appearance", "ColorScheme", "ThemeModWeb/colorscheme");
 //set yang bisa lihat menu

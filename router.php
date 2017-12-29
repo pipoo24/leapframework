@@ -149,6 +149,10 @@ $params = $init->getParams();
 
 $template = $init->getTemplate();
 
+if (strpos($_GET['url'], 'EfiHome') !== false){
+    $themepath = 'adminlte2';
+}
+
 $init->setThemeDynamic($themepath);
 
 //include the functions 
