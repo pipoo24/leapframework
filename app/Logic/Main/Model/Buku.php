@@ -6,7 +6,7 @@
  * Time: 10:21 AM
  */
 
-class Buku extends Model{
+class Buku2 extends Model{
     var $table_name = "buku";
     var $main_id = "id";
     var $default_read_coloms = "id,title,stok,gambar";
@@ -22,9 +22,20 @@ class Buku extends Model{
 
     public function overwriteForm ($return)
     {
-        $return['gambar'] = new Leap\View\InputFoto("gambar", "gambar", $this->gambar);
-        $return['stok'] = new Leap\View\InputText("number","stok", "stok", 200);
+        $acc = new Account();
+        $acc_arr = $acc->getWhere("admin_id>0");
+        foreach($acc_arr as $key=>$val){
+            $arr[$val->admin_id] = $val->admin_username;
+        }
+//        $arr = array(
+//            "5"=>"kecil 10",
+//            "10"=>"pas 10",
+//            "11"=>"lebih besar 10"
+//        );
 
+        $return['gambar'] = new Leap\View\InputFoto("gambar", "gambar", $this->gambar);
+        $return['stok'] = new Leap\View\InputSelect($arr,"stok", "stok", $this->stok);
+        $return['title'] = new Leap\View\InputTextRTE("title", "title", $this->title);
         return $return;
     }
 
@@ -36,9 +47,9 @@ class Buku extends Model{
 //        if (!isset($this->gambar)) {
 //            $err['gambar'] = Lang::t('gambar tidak boleh kosong');
 //        }
-        if ($this->stok<10) {
-            $err['stok'] = Lang::t('stok kurang gede');
-        }
+//        if ($this->stok<10) {
+//            $err['stok'] = Lang::t('stok kurang gede');
+//        }
         /*if (!isset($this->admin_id)) {
             $err['admin_username'] = Lang::t('Create New User Not Allowed');
         }*/

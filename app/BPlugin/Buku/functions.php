@@ -6,6 +6,6 @@
  * Time: 9:34 AM
  */
 
-Registor::registerAdminMenu("Test", "Buku", "BukuWeb/Buku");
+Registor::registerAdminMenu("Test", "Buku2", "BukuWeb/Buku2");
 //set yang bisa lihat menu
-Registor::setDomainAndRoleMenu("Buku");
+Registor::setDomainAndRoleMenu("Buku2");

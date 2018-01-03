@@ -8,14 +8,14 @@
 
 class BukuWeb extends WebService{
 
-    var $access_Buku = "admin";
-    public function Buku ()
+    var $access_Buku2 = "admin";
+    public function Buku2 ()
     {
 
 
 
         //create the model object
-        $cal = new Buku();
+        $cal = new Buku2();
         //send the webclass
         $webClass = __CLASS__;
 
